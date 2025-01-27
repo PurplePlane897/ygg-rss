@@ -24,8 +24,12 @@ No .exe sorry
 ```bash
 git clone https://github.com/PurplePlane897/ygg-rss
 cd ygg-rss
+mkdir -p torrents/tmp
 python3 -m pip install -r requirements.txt
 uvicorn main:app --host 0.0.0.0 --port 8192
+
+# You can run it in the background with pm2 :
+pm2 start "uvicorn main:app --host 0.0.0.0 --port 8192" -name RssYgg 
 ```
 
 With docker :
