@@ -24,7 +24,7 @@ async def ygg(cat):
 async def yggdl(id):
     url='https://rss.dathomir.fr:443/download?id={id}&passkey=Ttw5xQcCbmjHUwC9jCs8fdbrGEnF8yEt'.format(id=id)
     r=requests.get(url, stream=True)
-    with open(f"torrents/{id}.torrent", "wb") as torrentFile:
+    with open("torrents/{id}.torrent", "wb") as torrentFile:
         for chunk in r.iter_content(chunk_size=8192):
             if chunk:
                 torrentFile.write(chunk)
